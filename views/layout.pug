@@ -1,0 +1,50 @@
+doctype html
+html(lang='ua')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="../../../javascripts/bootstrap-3.2.0-dist/css/bootstrap.min.css")
+    script(src="../../../javascripts/jquery-3.5.1.slim.min.js")
+    script(src="../../../javascripts/bootstrap-3.2.0-dist/js/bootstrap.min.js")
+    link(rel='stylesheet', href='../../../stylesheets/style.css')
+  body
+    div(class='container-fluid')
+      div(class='row')
+        div(class='col-sm-2')
+          block sidebar
+            ul(class='sidebar-nav')
+              li 
+                a(href='/permit') Початок
+              li 
+                a(href='/permit/letters') Всі листи
+              li 
+                a(href='/permit/claimants') Всі позивачі
+              li 
+                a(href='/permit/senders') Всі адресанти
+              li 
+                a(href='/permit/officials') Всі посадовці
+              li 
+                a(href='/permit/actions') Всі дії
+              li 
+                a(href='/permit/subjects') Всі предмети
+              li 
+                a(href='/permit/courts') Всі суди                         
+              li 
+                hr
+              li 
+                a(href='/permit/letter/create') Новий лист
+              li 
+                a(href='/permit/claimant/create') Новий позивач
+              li 
+                a(href='/permit/sender/create') Новий адресант
+              li 
+                a(href='/permit/action/create') Нова дія
+              li 
+                a(href='/permit/subject/create') Новий предмет
+              li 
+                a(href='/permit/court/create') Новий суд                
+
+                
+        div(class='col-sm-10')
+          block content

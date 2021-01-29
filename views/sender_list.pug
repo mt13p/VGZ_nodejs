@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each sender in sender_list
+        li
+            a(href=sender.url) #{sender.name}
+            |  (#{sender.legalservice})
+    else
+        li Адресантів не знайдено

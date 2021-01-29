@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Відправник: #{sender.name}
+
+  h2 Юристи: #{sender.legalservice}
+
+  hr
+  p
+    a(href=sender.url+'/delete') Видалити адресанта

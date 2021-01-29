@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each letter in letter_list
+        li
+            a(href=letter.url) #{letter.sender.name}
+            |  (#{letter.date_formatted})
+    else
+        li Листів не знайдено

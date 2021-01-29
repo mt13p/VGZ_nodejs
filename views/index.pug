@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Вітаю в #[em Дозвільній системі ВГЗ]! Можливі помилки в роботі, система розробляється.
+  h1 Змінні дані
+
+  if error
+    p Помилка отримання інформації
+  else
+    p База містить:
+
+    ul
+      li #[strong Листів:] !{data.letter_count}
+      li #[strong Позивачів:] !{data.claimant_count}
+      li #[strong Адресантів:] !{data.sender_count}

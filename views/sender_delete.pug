@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 #{title}
+  h2 Відправник: #{sender.name}
+  h3 Юристи: #{sender.legalservice}
+
+  if sender_letters.length
+    p #[stong Спочатку видаліть наступні листи:]
+    div(style='margin-left:20px;margin-top:20px')
+        h4 Листи
+        dl
+        each letter in sender_letters
+            dt
+              a(href=letter.url) #{letter.date_formatted} #{letter.sender.name} 
+            dd #{letter.executant}
+  else
+   p Ви дійсно бажаєте видалити цьго адресанта?
+   form(method='POST' action='')
+    div.form-group
+      input#senderid.form-control(type='hidden',name='senderid', required='true', value=sender._id)
+      button.btn.btn-primary(type='submit') Видалити

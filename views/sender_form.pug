@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+        label(for='name') Адресант
+        input#name.form-control(type='text', placeholder='Назва організації' name='name' value=(undefined===sender ? '' : sender.name), required='true')
+    div.form-group
+        label(for='legalservice') Юридичний підрозділ 
+        input#legalservice.form-control(type='text', placeholder='Найменування юристів' name='legalservice' value=(undefined===sender ? '' : sender.legalservice), required='true')
+    button.btn.btn-primary(type='submit') Записати
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg  
